@@ -1,0 +1,20 @@
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 25px 25px;
+}
+
+.none {
+  animation: 4s zIndex forwards;
+}
+
+@keyframes zIndex {
+  0% {
+    z-index: 1;
+  }
+  100% {
+    z-index: -10;
+  }
+}

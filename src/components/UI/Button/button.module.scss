@@ -1,0 +1,14 @@
+@import "@/styles/vars";
+
+.button {
+  text-transform: uppercase;
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  padding: 15px 45px;
+  transition: all 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  box-shadow: 0px 4px 10px rgba(39, 39, 39, 0.2);
+  @include adpt($bmob-r) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}

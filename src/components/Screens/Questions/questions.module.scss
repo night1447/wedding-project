@@ -1,0 +1,11 @@
+@import "@/styles/vars";
+
+.questions {
+  height: unset;
+  min-height: 100vh;
+}
+.title{
+  @include adpt($bmob-r){
+    font-size: 28px;
+  }
+}

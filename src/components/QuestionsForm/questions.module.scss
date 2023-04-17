@@ -1,0 +1,50 @@
+@import "@/styles/vars";
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 60px;
+  border: 2px solid var(--accent);
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
+  @include adpt($mtab-r) {
+    width: 100%;
+    padding: 30px;
+    gap: 24px;
+  }
+  @include adpt($bmob-r) {
+    padding: 16px;
+  }
+}
+
+.block {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+.subtitle {
+  font-size: 32px;
+  margin-bottom: 16px;
+  @include adpt($mtab-r) {
+    font-size: 24px;
+  }
+
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  @include adpt($bmob-r) {
+    gap: 12px;
+  }
+}
+
+.hint {
+  font-weight: 200;
+  font-size: 16px;
+}

@@ -1,0 +1,42 @@
+.checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.checked {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    left: 50%;
+    top: 50%;
+    background: var(--accent);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.input:checked ~ .checked {
+  &::before {
+    opacity: 1;
+  }
+}

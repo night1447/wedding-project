@@ -1,0 +1,80 @@
+@import "@/styles/vars";
+.button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.5s;
+  background-color: transparent;
+
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    width: 24px;
+    left: 50%;
+    top: 50%;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--black);
+    transition: 0.5s background-color, transform 0.5s;
+  }
+
+  &::after {
+    width: 12px;
+    left: 0;
+    transform: translate(-10%, 70%) rotate(45deg);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &::before, &::after {
+      background-color: var(--error);
+    }
+  }
+
+  &_disabled {
+    transform: rotate(45deg);
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      width: 24px;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+      &::before, &::after {
+        background: var(--green);
+      }
+    }
+
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--accent);
+  border-radius: 16px;
+  font-size: 18px;
+  padding: 5px 10px;
+  @include adpt($bmob-r){
+    font-size: 16px;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.disabled {
+  background-color: var(--disabled);
+}

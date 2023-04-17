@@ -1,0 +1,117 @@
+@import "@/styles/vars";
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  @include adpt($mtab-r) {
+    gap: 50px;
+    justify-content: center;
+  }
+  @include adpt($stab-r) {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    gap: 24px;
+  }
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin: 0 auto;
+  max-width: 900px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 86%;
+    width: 1px;
+    top: 35px;
+    left: 250px;
+    opacity: 0.3;
+    background-color: var(--black);
+    @include adpt($mtab-r) {
+      left: 30.7%;
+    }
+    @include adpt($stab-r) {
+      left: unset;
+      right: 72px;
+      height: 83%;
+    }
+    @include adpt($bmob-r) {
+      right: 13%;
+      height: 84%;
+    }
+    @include adpt(450) {
+      right: 14%;
+    }
+    @include adpt(400) {
+      height: 86%;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+  flex-basis: 40%;
+  font-weight: 700;
+  margin-bottom: 24px;
+  @include adpt($bmob-r) {
+    flex-basis: unset;
+  }
+}
+
+.description {
+  font-weight: 300;
+}
+
+.shell {
+  flex-basis: 45%;
+}
+
+.time {
+  font-size: 21px;
+  flex-basis: 100px;
+  @include adpt($bmob-r) {
+    flex-basis: unset;
+  }
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--black);
+  opacity: 0.3;
+}
+
+.image {
+  width: 80px;
+  height: 100px;
+  @include adpt($mtab-r) {
+    height: 80px;
+  }
+  @include adpt($bmob-r) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100px;
+  margin-right: 90px;
+  @include adpt($mtab-r) {
+    flex-basis: 50px;
+    margin-right: 40px;
+  }
+  @include adpt($stab-r) {
+    margin-right: 24px;
+    flex-basis: unset;
+    height: 40px;
+  }
+}

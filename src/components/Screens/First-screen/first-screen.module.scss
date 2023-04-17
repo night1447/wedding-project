@@ -1,0 +1,64 @@
+@import "@/styles/vars";
+
+.first-screen {
+  height: unset;
+  padding: 90px 0 90px;
+  @include adpt($stab-r) {
+    padding: 60px 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
+  @include adpt($stab-r) {
+    height: 600px;
+  }
+  @include adpt($bmob-r){
+    height: 400px;
+  }
+}
+
+.title {
+  font-size: 90px;
+  text-align: center;
+  line-height: 100px;
+  max-width: 300px;
+  @include adpt($stab-r) {
+    font-size: 80px;
+    line-height: 90px;
+  }
+  @include adpt($bmob-r) {
+    font-size: 48px;
+    line-height: 60px;
+    max-width: 150px;
+  }
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.imageWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  @include adpt($stab-r) {
+    height: 600px;
+    width: 600px;
+  }
+  @include adpt($bmob-r) {
+    height: 400px;
+    width: 400px;
+  }
+}

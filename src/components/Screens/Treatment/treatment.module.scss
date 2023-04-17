@@ -1,0 +1,48 @@
+@import "@/styles/vars";
+
+.treatment {
+  position: relative;
+  margin-top: 5px;
+  background-color: var(--accent);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 30px;
+  max-width: 600px;
+  @include adpt($bmob-r) {
+    margin-bottom: 24px;
+    max-width: 400px;
+  }
+}
+
+.description {
+  text-align: center;
+  max-width: 900px;
+
+  &:not(:last-child) {
+    margin-bottom: 5px
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}

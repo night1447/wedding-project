@@ -1,0 +1,43 @@
+@import "@/styles/vars";
+
+.blocks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  @include adpt($bmob-r) {
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  border-radius: 10px;
+  height: 90px;
+  font-weight: 300;
+  font-size: 14px;
+  background-color: rgba(206, 215, 206, 0.5);
+  @include adpt($stab-r) {
+    width: 72px;
+    height: 72px;
+    font-size: 12px;
+  }
+  @include adpt($bmob-r) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.value {
+  font-weight: 600;
+  font-size: 18px;
+  @include adpt($stab-r) {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: $white;
+  color: $black;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 64px;
+  @include adpt($mtab-r) {
+    font-size: 54px;
+  }
+  @include adpt($bmob-r) {
+    font-size: 42px;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 64px;
+  @include adpt($mtab-r) {
+    margin-bottom: 48px;
+  }
+  @include adpt($bmob-r) {
+    margin-bottom: 32px;
+  }
+}
+
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 90px 0;
+  @include adpt($mtab-r) {
+    align-items: center;
+    height: unset;
+    min-height: 100vh;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}

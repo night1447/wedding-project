@@ -1,0 +1,29 @@
+.message {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  max-width: 50%;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 0 20px 0 20px;
+}
+
+.success {
+  border: 2px solid #60A561;
+}
+
+.error {
+  border: 2px solid var(--error);
+}
+
+.title {
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.description {
+  opacity: 0.5;
+  font-weight: 300;
+}

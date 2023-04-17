@@ -1,0 +1,62 @@
+@import '@/styles/vars.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include adpt($mtab-r) {
+    width: 900px;
+  }
+
+  &_little {
+    width: unset;
+    gap: 10px;
+  }
+
+}
+
+.property {
+  max-width: 200px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--black);
+  }
+
+  &.yes {
+    background-color: var(--accent);
+  }
+
+  &.idk {
+    background-color: var(--disabled);
+  }
+
+  &.no {
+    background-color: rgba(232, 56, 69, 0.5);
+  }
+}
+
+.head {
+  display: grid;
+  width: 100%;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  font-weight: 700;
+  @include adpt($mtab-r) {
+    width: 900px;
+  }
+}
+
+.wrapper {
+  width: 80%;
+  @include adpt($mtab-r) {
+    width: 95%;
+    overflow-x: auto;
+    margin-left: auto;
+  }
+}
