@@ -1,5 +1,3 @@
-// @flow
-import * as React from 'react';
 import {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import Layout from "@/components/layout/Layout";
 import {Users} from "@/models/models";
@@ -16,13 +14,21 @@ import {Contacts} from "@/components/Screens/Contacts/Contacts";
 import {MapScreen} from "@/components/Screens/Map/Map";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const response = await axios.get(process.env.BASE_URL + '/getIds');
-    const data: string[] = await response.data;
-    const paths: { params: { id: string } }[] = data.map(item => ({params: {id: item}}))
-    return {
-        paths: paths,
-        fallback: false,
-    };
+    try {
+        const response = await axios.get(process.env.BASE_URL + '/getIds');
+        const data: string[] = await response.data;
+        const paths: { params: { id: string } }[] = data.map(item => ({params: {id: item}}))
+        return {
+            paths: paths,
+            fallback: false,
+        };
+    } catch (e) {
+        console.log(e);
+        return {
+            paths: [],
+            fallback: false,
+        }
+    }
 }
 export const getStaticProps: GetStaticProps = async (context) => {
     try {
@@ -45,7 +51,7 @@ interface StaticProps {
     data: Users,
 }
 
-const DefaultPage: NextPage<any> = ({data}) => {
+const DefaultPage: NextPage<StaticProps> = ({data}) => {
     return (
         <Layout title={'Главная'}>
             <FirstScreen/>
