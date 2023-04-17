@@ -12,22 +12,16 @@ import {Attention} from "@/components/Screens/Attention/Attention";
 import {Photo} from "@/components/Screens/Photo/Photo";
 import {Contacts} from "@/components/Screens/Contacts/Contacts";
 import {MapScreen} from "@/components/Screens/Map/Map";
+import {PrismaClient} from "@prisma/client";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    try {
-        const response = await axios.get(process.env.BASE_URL + '/getIds');
-        const data: string[] = await response.data;
-        const paths: { params: { id: string } }[] = data.map(item => ({params: {id: item}}))
-        return {
-            paths: paths,
-            fallback: false,
-        };
-    } catch (e) {
-        return {
-            paths: [],
-            fallback: false,
-        }
-    }
+    const prisma = new PrismaClient();
+    const data = await prisma.users.findMany();
+    const paths: { params: { id: string } }[] = data.map(item => ({params: {id: item.id}}))
+    return {
+        paths: paths,
+        fallback: false,
+    };
 }
 export const getStaticProps: GetStaticProps = async (context) => {
     try {
