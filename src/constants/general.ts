@@ -1,7 +1,7 @@
 export const TITLE_SITE: string = 'Саша&Настя';
 
-export const PLACE: string = 'Atrium hall';
-export const ADDRESS: string = 'г Лида ул рыбиновского 86';
+export const PLACE: string = 'Ресто-бар «Ваши Гули»';
+export const ADDRESS: string = 'Г.Лида ,ул.Янки купалы,1';
 export const DATE: string = '24 июня 2023'
 
 
