@@ -12,7 +12,7 @@ export default async function handler(
         if (req.method === "GET") {
             const data = await prisma.user.findMany({
                 where: {
-                    usersId: id as string,
+                    usersId: id ? id as string : '',
                 },
             });
             const familyStatus = await prisma.users.findUnique({

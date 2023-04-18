@@ -8,9 +8,6 @@ type Props = {
 export const SubscriberItem: FC<Props> = ({subscriber}) => {
     return (
         <li className={`${styles.item} ${styles[subscriber.arrivement?.toLowerCase() || '']}`}>
-            <div className={styles.property}>
-                {subscriber.id}
-            </div>
             <ul className={`${styles.list} ${styles.list_little}`}>
                 {subscriber.name.split(',').map(item => <li className={styles.property} key={item}>{item}</li>)}
             </ul>

@@ -36,3 +36,5 @@ next-env.d.ts
 
 .next
 .idea
+/dist
+/out
