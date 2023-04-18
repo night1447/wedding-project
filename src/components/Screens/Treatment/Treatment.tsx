@@ -34,14 +34,14 @@ export const Treatment: FC<TreatmentProps> = ({people}) => {
             </motion.div>
             <Title className={styles.title}>{getStringTitle(people)} {getStringNames(people)}!</Title>
             <p className={styles.description}>
-                <b>{DATE}</b> может пройти как обычный день и не запомнится Вам ничем особенным…
+                <b>{DATE}</b> может пройти как обычный день и не запомнится {people.people.length === 1 ? 'тебе' : 'вам'} ничем особенным…
             </p>
             <p className={styles.description}>
-                А может стать одним из самых приятных дней не только для нас, но и для Вас!
+                А может стать одним из самых приятных дней не только для нас, но и для {people.people.length === 1 ? 'тебя' : 'вас'}!
             </p>
             <p className={styles.description}>
                 {!people.isFamily ?
-                    `Очень ждем Вас на нашей СВАДЬБЕ и не представляем этого праздника без Вас, самых близких нам людей❤️` :
+                    `Очень ждем на нашей СВАДЬБЕ и не представляем этого праздника без ${people.people.length === 1 ? 'тебя' : 'вас'}, ${people.people.length === 1 ? 'самого близкого нам человека' : 'самых близких нам людей'} ❤️` :
                     `Очень ждем вашу семью на нашей СВАДЬБЕ и не представляем этого праздника без Вас, самых близких нам
                 людей❤️`
                 }
