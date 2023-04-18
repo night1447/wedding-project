@@ -26,6 +26,7 @@ export const FirstScreen = () => {
             <div className={styles.timer}>
                 <Timer/>
             </div>
+            <Image src={'/assets/leaves-1.png'} alt={'цветочки'} fill className={styles.decoration}/>
         </section>
     );
 };

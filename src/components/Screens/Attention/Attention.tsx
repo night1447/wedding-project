@@ -1,10 +1,11 @@
 import {WrapperSection} from "@/components/WrapperSection/WrapperSection";
 import styles from './attention.module.scss'
+import {Title} from "@/components/UI/Title/Title";
 
 export const Attention = () => {
     return (
         <WrapperSection sectionClass={styles.attention} id={"attention"}>
-            <h2>Пожелания</h2>
+            <Title>Пожелания</Title>
             <p className={styles.paragraph}>
                 Мы не хотим утруждать вас выбором подарка, поэтому будем рады вашему вкладу в бюджет нашей молодой
                 семьи.

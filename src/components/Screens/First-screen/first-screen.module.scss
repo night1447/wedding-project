@@ -1,8 +1,10 @@
 @import "@/styles/vars";
 
 .first-screen {
+  position: relative;
   height: unset;
   padding: 90px 0 90px;
+  background: #f2f2f2f2;
   @include adpt($stab-r) {
     padding: 60px 0;
   }
@@ -17,8 +19,8 @@
   @include adpt($stab-r) {
     height: 600px;
   }
-  @include adpt($bmob-r){
-    height: 400px;
+  @include adpt($bmob-r) {
+    height: 500px;
   }
 }
 
@@ -32,9 +34,9 @@
     line-height: 90px;
   }
   @include adpt($bmob-r) {
-    font-size: 48px;
+    font-size: 64px;
     line-height: 60px;
-    max-width: 150px;
+    max-width: 240px;
   }
 }
 
@@ -58,7 +60,30 @@
     width: 600px;
   }
   @include adpt($bmob-r) {
-    height: 400px;
-    width: 400px;
+    width: 120vw;
+  }
+  @include adpt(420) {
+    height: 500px;
+  }
+}
+
+.decoration {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  animation: 5s infinite animation forwards;
+  @include adpt($stab-r) {
+  }
+}
+
+@keyframes animation {
+  0% {
+  }
+  50% {
+    transform: scale(1.005);
+  }
+  100% {
+    transform: scale(1);
   }
 }

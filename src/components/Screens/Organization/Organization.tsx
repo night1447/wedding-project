@@ -6,6 +6,7 @@ import {Button} from "@/components/UI/Button/Button";
 import leafImage from "@/../public/assets/Leaf-4.png"
 import leafLeftImage from "@/../public/assets/Leaf-1.png"
 import Image from "next/image";
+import {Title} from "@/components/UI/Title/Title";
 
 export const Organization: FC = () => {
     const navigateMapHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -20,7 +21,7 @@ export const Organization: FC = () => {
         <WrapperSection sectionClass={styles.organization}
                         wrapperClass={styles.organizationWrapper}
                         id={'organization'}>
-            <h2 className={styles.title}>Место и Время</h2>
+            <Title className={styles.title}>Место и Время</Title>
             <ul className={styles.list}>
                 <li className={styles.item}>
                     <h3 className={styles.subtitle}>

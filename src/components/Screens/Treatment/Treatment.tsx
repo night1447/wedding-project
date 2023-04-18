@@ -5,6 +5,7 @@ import {WrapperSection} from "@/components/WrapperSection/WrapperSection";
 import {FC} from "react";
 import {Users} from "@/models/models";
 import {DATE} from "@/constants/general";
+import {Title} from "@/components/UI/Title/Title";
 
 interface TreatmentProps {
     people: Users
@@ -27,10 +28,11 @@ export const Treatment: FC<TreatmentProps> = ({people}) => {
                 initial={{x: 0, y: 250, opacity: 0}}
                 animate={{x: 0, y: 0, opacity: 1}}
                 transition={{type: "spring", stiffness: 15}}
-                className={styles.imageWrapper}>
+                className={styles.imageWrapper}
+            >
                 <Image src={'/assets/photo.jpg'} alt={'фотка молодоженов'} className={styles.image} fill/>
             </motion.div>
-            <h2 className={styles.title}>{getStringTitle(people)} {getStringNames(people)}!</h2>
+            <Title className={styles.title}>{getStringTitle(people)} {getStringNames(people)}!</Title>
             <p className={styles.description}>
                 <b>{DATE}</b> может пройти как обычный день и не запомнится Вам ничем особенным…
             </p>
