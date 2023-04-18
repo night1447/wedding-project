@@ -14,11 +14,8 @@ export const Subscribers: FC = () => {
             response.then(data => {
                 setData(data.data);
                 setLoading(false);
-            }).catch(e => {
-                console.log(e);
             })
         } catch (e) {
-            console.log(e);
         }
     }, [])
     return (

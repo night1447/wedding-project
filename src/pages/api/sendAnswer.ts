@@ -23,7 +23,6 @@ export default async function handler(
                     event_id: 1,
                 }
             })
-            answer.then(item => console.log(item, "--Subscriber"))
         }
     } catch (error) {
         console.error(error);
