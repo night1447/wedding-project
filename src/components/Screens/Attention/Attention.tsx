@@ -1,9 +1,8 @@
 import {WrapperSection} from "@/components/WrapperSection/WrapperSection";
 import styles from './attention.module.scss'
 import {Title} from "@/components/UI/Title/Title";
-import Contacts from "@/components/Screens/Contacts/Contacts";
 
- const Attention = () => {
+export const Attention = () => {
     return (
         <WrapperSection sectionClass={styles.attention} id={"attention"}>
             <Title>Пожелания</Title>
@@ -18,4 +17,3 @@ import Contacts from "@/components/Screens/Contacts/Contacts";
         </WrapperSection>
     );
 };
-export default Attention;

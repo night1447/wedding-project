@@ -8,7 +8,7 @@ import leafLeftImage from "@/../public/assets/Leaf-1.png"
 import Image from "next/image";
 import {Title} from "@/components/UI/Title/Title";
 
-const Organization: FC = () => {
+export const Organization: FC = () => {
     const navigateMapHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         const elem = document.getElementById('map');
@@ -55,4 +55,3 @@ const Organization: FC = () => {
         </WrapperSection>
     );
 };
-export default Organization;

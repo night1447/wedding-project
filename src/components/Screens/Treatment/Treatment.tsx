@@ -21,7 +21,7 @@ const getStringNames = (people: Users) => {
 
 const getStringTitle = (people: Users) => people.people?.length >= 2 ? "Дорогие" : people.people?.at(0)?.sex === "M" ? "Дорогой" : "Дорогая";
 
-const Treatment: FC<TreatmentProps> = ({people}) => {
+export const Treatment: FC<TreatmentProps> = ({people}) => {
     return (
         <WrapperSection wrapperClass={styles.wrapper} sectionClass={styles.treatment} id={'treatment'}>
             <motion.div
@@ -52,4 +52,3 @@ const Treatment: FC<TreatmentProps> = ({people}) => {
     );
 };
 
-export default Treatment;

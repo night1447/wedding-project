@@ -10,7 +10,7 @@ interface QuestionsProps {
     people: Users
 }
 
-const Questions: FC<QuestionsProps> = ({people}) => {
+export const Questions: FC<QuestionsProps> = ({people}) => {
     return (
         <WrapperSection sectionClass={styles.questions} id={'questions'}>
             <Title className={styles.title}>Пожалуйста пройдите небольшой опрос</Title>
@@ -18,4 +18,3 @@ const Questions: FC<QuestionsProps> = ({people}) => {
         </WrapperSection>
     );
 };
-export default Questions;

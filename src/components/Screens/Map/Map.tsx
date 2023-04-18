@@ -3,7 +3,7 @@ import {Map, Placemark, YMaps} from "@pbe/react-yandex-maps";
 import React from "react";
 import styles from './map.module.scss'
 
-const MapScreen = () => {
+export const MapScreen = () => {
     return (
         <WrapperSection wrapperClass={styles.wrapper} sectionClass={styles.section} id={'map'}>
             <YMaps>
@@ -27,4 +27,3 @@ const MapScreen = () => {
         </WrapperSection>
     );
 };
-export default MapScreen;

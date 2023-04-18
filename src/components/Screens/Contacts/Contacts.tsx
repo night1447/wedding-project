@@ -16,7 +16,7 @@ const animateTransition = {
     ease: "easeInOut",
     repeat: Infinity,
 };
-const Contacts: FC = () => {
+export const Contacts: FC = () => {
     return (
         <WrapperSection sectionClass={styles.contacts} wrapperClass={styles.contactsWrapper} id={'contacts'}>
             <div className={styles.inner}>
@@ -60,4 +60,3 @@ const Contacts: FC = () => {
         </WrapperSection>
     );
 };
-export default Contacts;

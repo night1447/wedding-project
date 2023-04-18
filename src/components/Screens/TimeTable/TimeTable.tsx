@@ -4,7 +4,7 @@ import {TimeTableList} from "@/components/TimeTableList/TimeTableList";
 import styles from './timetable.module.scss'
 import {Title} from "@/components/UI/Title/Title";
 
-const TimeTable: FC = () => {
+export const TimeTable: FC = () => {
     return (
         <WrapperSection sectionClass={styles.timetable} id={'timetable'}>
             <Title className={styles.title}>Программа вечера</Title>
@@ -12,4 +12,3 @@ const TimeTable: FC = () => {
         </WrapperSection>
     );
 };
-export default TimeTable;
