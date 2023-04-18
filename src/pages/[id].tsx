@@ -1,4 +1,4 @@
-import {GetStaticPaths, GetStaticProps, NextPage} from "next";
+import {GetServerSideProps, GetStaticProps, NextPage} from "next";
 import Layout from "@/components/layout/Layout";
 import {Users} from "@/models/models";
 import axios from "axios";
@@ -12,25 +12,15 @@ import {Attention} from "@/components/Screens/Attention/Attention";
 import {Photo} from "@/components/Screens/Photo/Photo";
 import {Contacts} from "@/components/Screens/Contacts/Contacts";
 import {MapScreen} from "@/components/Screens/Map/Map";
-import {PrismaClient} from "@prisma/client";
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const prisma = new PrismaClient();
-    const data = await prisma.users.findMany();
-    const paths: { params: { id: string } }[] = data.map(item => ({params: {id: item.id}}))
-    return {
-        paths: paths,
-        fallback: false,
-    };
-}
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         const {id} = context.params as ParsedUrlQuery;
-        const response = await axios.get(process.env.BASE_URL + `/getUsersById/?id=${id}`);
+        const response = await axios.get(process.env.BASE_URL + `/getUserById/?id=${id}`);
         const data = await response.data;
         return {
             props: {
-                data: data
+                data: data,
             }
         }
     } catch (e) {
