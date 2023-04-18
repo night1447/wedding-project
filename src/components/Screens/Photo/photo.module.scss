@@ -1,6 +1,7 @@
 @import "@/styles/vars";
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +16,6 @@
     font-size: 18px;
   }
   @include adpt($bmob-r) {
-    font-size: 16px;
     text-align: center;
   }
 }
@@ -25,5 +25,58 @@
   font-weight: 700;
   @include adpt($bmob-r) {
     font-size: 48px;
+  }
+}
+
+.leaves {
+  position: absolute;
+  width: 360px;
+  height: 320px;
+
+  & img {
+    pointer-events: none;
+  }
+
+  &_left {
+    left: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+    @include adpt($desm-r) {
+      transform: translateY(50%) translateX(30%);
+    }
+    @include adpt($tab-r) {
+      transform: translateY(50%);
+    }
+    @include adpt($stab-r) {
+      transform: translateY(80%);
+    }
+    @include adpt($bmob-r) {
+      //display: none;
+      transform: translateY(100%);
+
+    }
+  }
+
+  &_right {
+    right: 0;
+    top: 0;
+    transform: translateY(-50%) translateX(-50%) scale(-1, -1);
+    @include adpt($desm-r) {
+      transform: translateY(-50%) translateX(-30%) scale(-1, -1);
+    }
+    @include adpt($tab-r) {
+      transform: translateY(-50%) scale(-1, -1);
+    }
+    @include adpt($stab-r) {
+      transform: translateY(-70%) scale(-1, -1);
+    }
+    @include adpt($stab-r) {
+      transform: translateY(-100%) scale(-1, -1);
+    }
+  }
+
+  @include adpt($stab-r) {
+    width: 270px;
+    height: 220px;
   }
 }

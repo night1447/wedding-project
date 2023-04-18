@@ -3,7 +3,7 @@ import {SubscriberList} from "@/components/Subscribers/SubscriberList";
 import {FC, useEffect, useState} from "react";
 import styles from './subscriber.module.scss'
 import axios from "axios";
-import Image from "next/image";
+import {Loading} from "@/components/Loading/Loading";
 
 export const Subscribers: FC = () => {
     const [data, setData] = useState([]);
@@ -23,7 +23,7 @@ export const Subscribers: FC = () => {
     }, [])
     return (
         loading ?
-            <Image alt={'Загрузка'} src={'/Loading.gif'} width={600} height={600}/>
+            <Loading/>
             :
             <div className={styles.wrapper}>
                 <SubscriberHead/>
