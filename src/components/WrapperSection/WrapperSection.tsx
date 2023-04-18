@@ -23,7 +23,7 @@ export const WrapperSection: FC<PropsWithChildren<WrapperSectionProps>> = ({
                 <motion.div
                     initial={{x: 0, opacity: 0}}
                     animate={{x: 0, opacity: isInView ? 1 : 0}}
-                    transition={{type: "spring", stiffness: 15}}
+                    transition={{type: "spring", stiffness: 25, delay: 0.3}}
                     className={`${wrapperClass || ''}`}>
                     {children}
                 </motion.div>
