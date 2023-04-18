@@ -23,7 +23,7 @@ export const Contacts: FC = () => {
             <div className={styles.inner}>
                 <div className={styles.imageWrapper}>
                     <Image src={organizatorImage} alt={'фотография организатора'} className={styles.image}/>
-                    <a href={'https://instagram.com/marina_timofeeva_wedding?igshid=YmMyMTA2M2Y='}
+                    <a href={'https://instagram.com/marina_timofeeva_wedding?igshid=YmMyMTA2M2Y'}
                        target={'_blank'} className={styles.socLink}>
                         <motion.svg className={styles.svg} viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
