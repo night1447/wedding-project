@@ -74,6 +74,7 @@
   opacity: 0.3;
   animation: 5s infinite animation forwards;
   @include adpt($stab-r) {
+    display: none;
   }
 }
 
