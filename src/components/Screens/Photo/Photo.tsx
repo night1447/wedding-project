@@ -6,7 +6,7 @@ import {Title} from "@/components/UI/Title/Title";
 
 const font = localFont({src: './corinthia.woff2'});
 
-export const Photo = () => {
+const Photo = () => {
     return (
         <WrapperSection sectionClass={styles.section} wrapperClass={styles.wrapper}>
             <Title>Фотографии</Title>
@@ -15,3 +15,5 @@ export const Photo = () => {
         </WrapperSection>
     );
 };
+
+export default Photo;

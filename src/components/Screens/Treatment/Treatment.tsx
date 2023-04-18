@@ -21,7 +21,7 @@ const getStringNames = (people: Users) => {
 
 const getStringTitle = (people: Users) => people.people?.length >= 2 ? "Дорогие" : people.people?.at(0)?.sex === "M" ? "Дорогой" : "Дорогая";
 
-export const Treatment: FC<TreatmentProps> = ({people}) => {
+const Treatment: FC<TreatmentProps> = ({people}) => {
     return (
         <WrapperSection wrapperClass={styles.wrapper} sectionClass={styles.treatment} id={'treatment'}>
             <motion.div
@@ -34,10 +34,12 @@ export const Treatment: FC<TreatmentProps> = ({people}) => {
             </motion.div>
             <Title className={styles.title}>{getStringTitle(people)} {getStringNames(people)}!</Title>
             <p className={styles.description}>
-                <b>{DATE}</b> может пройти как обычный день и не запомнится {people.people.length === 1 ? 'тебе' : 'вам'} ничем особенным…
+                <b>{DATE}</b> может пройти как обычный день и не
+                запомнится {people.people.length === 1 ? 'тебе' : 'вам'} ничем особенным…
             </p>
             <p className={styles.description}>
-                А может стать одним из самых приятных дней не только для нас, но и для {people.people.length === 1 ? 'тебя' : 'вас'}!
+                А может стать одним из самых приятных дней не только для нас, но и
+                для {people.people.length === 1 ? 'тебя' : 'вас'}!
             </p>
             <p className={styles.description}>
                 {!people.isFamily ?
@@ -49,3 +51,5 @@ export const Treatment: FC<TreatmentProps> = ({people}) => {
         </WrapperSection>
     );
 };
+
+export default Treatment;
