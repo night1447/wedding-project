@@ -45,10 +45,11 @@ export const QuestionsForm: FC<QuestionsProps> = ({people}) => {
             setTimeout(() => {
                 setShowMessage(false);
             }, 4000);
+            const arriveAnswer = people.people.length === 1 ? answer : activeList.length > 0 ? 'Yes' : 'No';
             const resultedAnswer = {
                 alcohol: checked.join(','),
                 name: activeList.map(item => item.name + ' ' + item.surname).join(', '),
-                arrivement: answer,
+                arrivement: arriveAnswer,
                 id: people.id,
             }
             const sendData = await axios.post('/api/sendAnswer', resultedAnswer);
