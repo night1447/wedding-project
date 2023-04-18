@@ -2,6 +2,7 @@ import {FC, useEffect, useState} from "react";
 import {DATE} from "@/constants/date";
 import styles from './timer.module.scss'
 import {clearInterval} from "timers";
+import {motion} from "framer-motion";
 
 type TimerType = {
     weeks: number,
@@ -47,7 +48,10 @@ export const Timer: FC = () => {
 
 
         return (
-            <ul className={styles.blocks}>
+            <motion.ul className={styles.blocks}
+                       initial={{x: 0, y: 300, opacity: 0}}
+                       animate={{x: 0, y: 0, opacity: 1}}
+                       transition={{type: "spring", stiffness: 15}}>
                 <li className={styles.block}>
                 <span className={styles.value}>
                     {timeRemaining.weeks}
@@ -78,7 +82,7 @@ export const Timer: FC = () => {
                 </span>
                     секунд
                 </li>
-            </ul>
+            </motion.ul>
         );
     }
 ;

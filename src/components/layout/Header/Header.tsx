@@ -58,8 +58,10 @@ export const Header: FC = () => {
             >
                 <Navigation isOpen={isOpen} onClick={() => setIsOpen()}/>
             </motion.nav>
-            <motion.div className={`${styles.background}`} variants={sidebar}
-                        animate={isOpen ? 'open' : 'closed'}/>
+            <motion.div initial={{opacity: 0}} animate={{opacity: 1}} className={styles.backgroundWrapper}>
+                <motion.div className={`${styles.background}`} variants={sidebar}
+                            animate={isOpen ? 'open' : 'closed'}/>
+            </motion.div>
         </header>
     );
 };
