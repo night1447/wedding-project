@@ -1,4 +1,4 @@
-import {GetServerSideProps, GetStaticProps, NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import Layout from "@/components/layout/Layout";
 import {Users} from "@/models/models";
 import axios from "axios";
@@ -24,6 +24,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             }
         }
     } catch (e) {
+        console.log(e);
         return {
             notFound: true,
         }
