@@ -45,6 +45,10 @@
 }
 
 .hint {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   font-weight: 200;
   font-size: 16px;
+
 }

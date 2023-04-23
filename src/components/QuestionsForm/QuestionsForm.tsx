@@ -11,6 +11,7 @@ import {Users} from "@/models/models";
 import {Message} from "@/components/UI/Message/Message";
 import {AnimatePresence} from "framer-motion";
 import axios from "axios";
+import Image from "next/image";
 
 interface QuestionsProps {
     people: Users
@@ -75,8 +76,9 @@ export const QuestionsForm: FC<QuestionsProps> = ({people}) => {
             <fieldset className={styles.block} name={'coming'}>
                 <h4 className={styles.subtitle}>Вы придете?</h4>
                 {people.people?.length > 1 ? <><UsersList users={people.people} setActiveList={setActiveList}
-                                                         activeList={activeList}/>
-                        <p className={styles.hint}>*Если хотите убрать человека нажмите на галочку</p>
+                                                          activeList={activeList}/>
+                        <p className={styles.hint}><Image alt={"предупреждение"} src={'/assets/warning.svg'} width={30}
+                                                          height={30}/>Если хотите убрать человека нажмите на галочку</p>
                     </> :
                     <ul className={styles.answers}>
                         <li className={styles.answer}>
