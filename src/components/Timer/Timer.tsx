@@ -23,7 +23,7 @@ export const Timer: FC = () => {
         const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
         const calculateTimeRemaining = () => {
             const currentTime = Date.now();
-            const difference = new Date(DATE.year, DATE.month, DATE.day, 0, 0).getTime() - currentTime;
+            const difference = new Date(DATE.year, DATE.month - 1, DATE.day, 0, 0).getTime() - currentTime;
 
             if (difference > 0) {
                 const total = Math.floor(difference / 1000);
