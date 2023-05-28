@@ -49,11 +49,12 @@ export const QuestionsForm: FC<QuestionsProps> = ({people}) => {
             const arriveAnswer = people.people.length === 1 ? answer : activeList.length > 0 ? 'Yes' : 'No';
             const resultedAnswer = {
                 alcohol: checked.join(','),
-                name: activeList.map(item => item.name + ' ' + item.surname).join(', '),
+                name: activeList.length > 0 ? activeList.map(item => item.name + ' ' + item.surname).join(', ') : people.people.map(item => item.name + ' ' + item.surname).join(', '),
                 arrivement: arriveAnswer,
                 id: people.id,
             }
             const sendData = await axios.post('/api/sendAnswer', resultedAnswer);
+            console.log(resultedAnswer);
         } catch (e) {
             setError(true);
         }
